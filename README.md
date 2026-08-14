@@ -60,7 +60,7 @@ Python function. The public URL and API therefore require no CORS exception.
 | Synthetic records | 960, generated with seed `42` |
 | Approved SQL intents | 6 |
 | Arbitrary user SQL | 0 paths |
-| Python + API tests | 9 |
+| Python + API tests | 10 |
 | TypeScript tests | 3 |
 | Production health check | [`/api/health`](https://queryproof-theta.vercel.app/api/health) |
 

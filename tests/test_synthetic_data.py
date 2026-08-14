@@ -18,3 +18,9 @@ def test_public_dataset_has_no_identity_columns_or_contact_values() -> None:
     public_text = "\n".join(",".join(row[field] for field in text_fields) for row in rows)
     assert re.search(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}", public_text) is None
     assert re.search(r"\+?\d[\d\s().-]{8,}\d", public_text) is None
+
+
+def test_public_dataset_uses_cross_platform_line_endings() -> None:
+    data_path = Path(__file__).resolve().parents[1] / "data" / "support_tickets.csv"
+
+    assert b"\r\n" not in data_path.read_bytes()
