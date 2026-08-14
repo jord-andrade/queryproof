@@ -1,0 +1,29 @@
+# dependencies and builds
+/node_modules/
+/.next/
+/out/
+/coverage/
+
+# Python
+/.venv/
+__pycache__/
+*.py[cod]
+/.pytest_cache/
+/.mypy_cache/
+/.ruff_cache/
+
+# local configuration
+.env*
+!.env.example
+/.vercel/
+
+# editors and operating systems
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
+next-env.d.ts
+
+# generated local artifacts
+/tmp/
+
+.vercel

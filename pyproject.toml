@@ -1,0 +1,42 @@
+[project]
+name = "queryproof"
+version = "1.0.0"
+description = "Traceable analytics over a synthetic support dataset"
+readme = "README.md"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+  "duckdb==1.5.5",
+  "fastapi==0.141.1",
+  "pydantic==2.13.4",
+  "uvicorn==0.52.3",
+]
+
+[dependency-groups]
+dev = [
+  "httpx2==2.10.0",
+  "mypy==2.3.0",
+  "pip-audit==2.10.1",
+  "pytest==9.1.1",
+  "ruff==0.16.3",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["api", "queryproof", "scripts"]
+
+[[tool.mypy.overrides]]
+module = "duckdb"
+ignore_missing_imports = true
