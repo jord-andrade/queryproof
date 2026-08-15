@@ -9,6 +9,10 @@ updates:
         update-types:
           - version-update:semver-minor
           - version-update:semver-patch
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     groups:
       npm-production:
         dependency-type: production
@@ -26,6 +30,10 @@ updates:
         update-types:
           - version-update:semver-minor
           - version-update:semver-patch
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     groups:
       python-dependencies:
         patterns: ["*"]
@@ -40,6 +48,10 @@ updates:
         update-types:
           - version-update:semver-minor
           - version-update:semver-patch
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     groups:
       actions:
         patterns: ["*"]
